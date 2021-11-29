@@ -1,0 +1,150 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+There are two status of this question, rows and columns, which required
+to be looped through in order to find the best solution. There are two
+choices as well, going right and going down.
+\texttt{dp{[}row{]}{[}column{]}} can be defined as the minimum amount of
+path with lower to higher elevation at current position. Hence this
+function needs to return \texttt{dp{[}column{]}{[}0{]}} since where is
+the destination as final result.
+
+The way to find minimum number of moves from lower elevation to higher
+elevation can be solved by the
+\texttt{minElevatedPath(int{[}R{]}{[}C{]}\ elevation)} below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int} \FunctionTok{minElevatedPath}\OperatorTok{(}\DataTypeTok{int}\OperatorTok{[}\NormalTok{R}\OperatorTok{][}\NormalTok{C}\OperatorTok{]}\NormalTok{ elevation}\OperatorTok{)} \OperatorTok{\{}
+    \CommentTok{// dp has block shifted compared to elevation[R][C],}
+    \CommentTok{// hence all elevation coordination related need to +1.}
+    \DataTypeTok{int}\OperatorTok{[][]}\NormalTok{ dp }\OperatorTok{=} \KeywordTok{new} \DataTypeTok{int}\OperatorTok{[}\NormalTok{R}\OperatorTok{][}\NormalTok{C}\OperatorTok{];}
+    \CommentTok{// Base case: starting point (0, row) has no elevation change yet.}
+\NormalTok{    dp}\OperatorTok{[}\DecValTok{0}\OperatorTok{][}\NormalTok{R}\OperatorTok{]} \OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \CommentTok{// Other base cases: calculate the min path elevation }
+    \CommentTok{// for first row on top, }
+    \CommentTok{// and first column on left as precondition.}
+    \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ i }\OperatorTok{=} \DecValTok{1}\OperatorTok{;}\NormalTok{ i }\OperatorTok{\textless{}}\NormalTok{ C}\OperatorTok{;}\NormalTok{ i}\OperatorTok{++)} \OperatorTok{\{}
+\NormalTok{        dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{R}\OperatorTok{]} \OperatorTok{=}\NormalTok{ dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{][}\NormalTok{R}\OperatorTok{]} \OperatorTok{+} 
+            \FunctionTok{elevationCal}\OperatorTok{(}\NormalTok{elevation}\OperatorTok{[}\NormalTok{i}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{R}\OperatorTok{+}\DecValTok{1}\OperatorTok{],}\NormalTok{ elevation}\OperatorTok{[}\NormalTok{i}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{R}\OperatorTok{+}\DecValTok{1}\OperatorTok{]);}
+    \OperatorTok{\}}
+    \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ j }\OperatorTok{=}\NormalTok{ R}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{;}\NormalTok{ j }\OperatorTok{\textgreater{}} \DecValTok{0}\OperatorTok{;}\NormalTok{ j}\OperatorTok{{-}{-})} \OperatorTok{\{}
+\NormalTok{        dp}\OperatorTok{[}\NormalTok{C}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{=}\NormalTok{ dp}\OperatorTok{[}\NormalTok{C}\OperatorTok{][}\NormalTok{j}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{]} \OperatorTok{+} 
+            \FunctionTok{elevationCal}\OperatorTok{(}\NormalTok{elevation}\OperatorTok{[}\NormalTok{C}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{j}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{+}\DecValTok{1}\OperatorTok{],}\NormalTok{ elevation}\OperatorTok{[}\NormalTok{C}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{j}\OperatorTok{+}\DecValTok{1}\OperatorTok{]);}
+    \OperatorTok{\}}
+    \CommentTok{// Going right.}
+    \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ i }\OperatorTok{=} \DecValTok{1}\OperatorTok{;}\NormalTok{ i }\OperatorTok{\textless{}}\NormalTok{ C}\OperatorTok{;}\NormalTok{ i}\OperatorTok{++)} \OperatorTok{\{}
+        \CommentTok{// Going down.}
+        \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ j }\OperatorTok{=}\NormalTok{ R}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{;}\NormalTok{ j }\OperatorTok{\textgreater{}} \DecValTok{0}\OperatorTok{;}\NormalTok{ j}\OperatorTok{{-}{-})} \OperatorTok{\{}
+\NormalTok{            dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{=} \BuiltInTok{Math}\OperatorTok{.}\FunctionTok{min}\OperatorTok{(}\NormalTok{dp}\OperatorTok{[}\NormalTok{i }\OperatorTok{+} \DecValTok{1}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{+} 
+                                \FunctionTok{elevationCal}\OperatorTok{(}\NormalTok{elevation}\OperatorTok{[}\NormalTok{i}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{j}\OperatorTok{+}\DecValTok{1}\OperatorTok{],} 
+\NormalTok{                                             elevation}\OperatorTok{[}\NormalTok{i}\OperatorTok{+}\DecValTok{1}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{j}\OperatorTok{+}\DecValTok{1}\OperatorTok{]),} 
+\NormalTok{                                dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j }\OperatorTok{{-}} \DecValTok{1}\OperatorTok{]} \OperatorTok{+} 
+                                \FunctionTok{elevationCal}\OperatorTok{(}\NormalTok{elevation}\OperatorTok{[}\NormalTok{i}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{j}\OperatorTok{+}\DecValTok{1}\OperatorTok{],} 
+\NormalTok{                                             elevation}\OperatorTok{[}\NormalTok{i}\OperatorTok{+}\DecValTok{1}\OperatorTok{][}\NormalTok{j}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{+}\DecValTok{1}\OperatorTok{]));}
+        \OperatorTok{\}}
+    \OperatorTok{\}}
+    \ControlFlowTok{return}\NormalTok{ dp}\OperatorTok{[}\NormalTok{column}\OperatorTok{][}\DecValTok{0}\OperatorTok{];}
+\OperatorTok{\}}
+
+\DataTypeTok{int} \FunctionTok{elevationCal}\OperatorTok{(}\DataTypeTok{int}\NormalTok{ heightA}\OperatorTok{,} \DataTypeTok{int}\NormalTok{ heightB}\OperatorTok{)} \OperatorTok{\{}
+    \ControlFlowTok{if} \OperatorTok{(}\NormalTok{heightA }\OperatorTok{\textless{}}\NormalTok{ heightB}\OperatorTok{)} \OperatorTok{\{}\ControlFlowTok{return} \DecValTok{1}\OperatorTok{;\}} \ControlFlowTok{else} \OperatorTok{\{}\ControlFlowTok{return} \DecValTok{0}\OperatorTok{;\}}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Also, the minimum actual path can be found by selecting the smaller dp
+value for either top or left block in ending block, then move to the
+selected block, repeat the process until reach the starting block. The
+overall time complexity for this solution is O(n\^{}2).
+
+\end{document}

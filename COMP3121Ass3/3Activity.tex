@@ -1,0 +1,145 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+This question can be solved classic dynamic algorithm, which requires to
+loop through all possible solution in order to obtain maximum amount of
+enjoyment overall, however there is one extra restriction for this
+question, that is same activities cannot be chosen for two days in a
+row. The looping variable is based on the total number of days N as well
+as activities, the choices are choosing between activity 1, 2, or 3. The
+function dp{[}i{]} {[}j{]} can be defined as the maximum enjoyment by
+playing activity j at day i.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int} \FunctionTok{calculateMaxEnjoyment}\OperatorTok{(}\DataTypeTok{int}\OperatorTok{[}\NormalTok{n}\OperatorTok{][}\DecValTok{3}\OperatorTok{]}\NormalTok{ e}\OperatorTok{)} \OperatorTok{\{}
+    \DataTypeTok{int}\OperatorTok{[}\NormalTok{n}\OperatorTok{][}\DecValTok{3}\OperatorTok{]}\NormalTok{ dp }\OperatorTok{=} \DataTypeTok{int}\OperatorTok{[}\NormalTok{n}\OperatorTok{][}\DecValTok{3}\OperatorTok{];}
+    \DataTypeTok{int}\NormalTok{ prevChoice }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \CommentTok{// Base case, when 0 days no activity yet.}
+\NormalTok{    dp}\OperatorTok{[}\DecValTok{0}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    
+    \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ i }\OperatorTok{=} \DecValTok{1}\OperatorTok{;}\NormalTok{ i }\OperatorTok{\textless{}=}\NormalTok{ n}\OperatorTok{;}\NormalTok{ i}\OperatorTok{++)} \OperatorTok{\{}
+        \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ j }\OperatorTok{=} \DecValTok{1}\OperatorTok{;}\NormalTok{ j }\OperatorTok{\textless{}=} \DecValTok{3}\OperatorTok{;}\NormalTok{ j}\OperatorTok{++)} \OperatorTok{\{}
+            \DataTypeTok{int}\NormalTok{ activityEnjoy1 }\OperatorTok{=}\NormalTok{ dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{][}\DecValTok{1}\OperatorTok{]} \OperatorTok{+}\NormalTok{ e}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{];}
+            \DataTypeTok{int}\NormalTok{ activityEnjoy2 }\OperatorTok{=}\NormalTok{ dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{][}\DecValTok{2}\OperatorTok{]} \OperatorTok{+}\NormalTok{ e}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{];}
+            \DataTypeTok{int}\NormalTok{ activityEnjoy3 }\OperatorTok{=}\NormalTok{ dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{][}\DecValTok{3}\OperatorTok{]} \OperatorTok{+}\NormalTok{ e}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{];}
+            \CommentTok{// Avaiable choices based on previous choice.}
+            \ControlFlowTok{if} \OperatorTok{(}\NormalTok{prevChoice }\OperatorTok{==} \DecValTok{1}\OperatorTok{)} \OperatorTok{\{}
+                \CommentTok{// I can only choose activity 2 or 3 if I chose activity 1 yesterday.}
+\NormalTok{                dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{=} \BuiltInTok{Math}\OperatorTok{.}\FunctionTok{max}\OperatorTok{(}\NormalTok{activityEnjoy2}\OperatorTok{,}\NormalTok{ activityEnjoy3}\OperatorTok{);}
+            \OperatorTok{\}}
+            \ControlFlowTok{else} \ControlFlowTok{if} \OperatorTok{(}\NormalTok{prevChoice }\OperatorTok{==} \DecValTok{2}\OperatorTok{)} \OperatorTok{\{}
+\NormalTok{                dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{=} \BuiltInTok{Math}\OperatorTok{.}\FunctionTok{max}\OperatorTok{(}\NormalTok{activityEnjoy1}\OperatorTok{,}\NormalTok{ activityEnjoy3}\OperatorTok{);}
+            \OperatorTok{\}}
+            \ControlFlowTok{else} \ControlFlowTok{if} \OperatorTok{(}\NormalTok{prevChoice }\OperatorTok{==} \DecValTok{3}\OperatorTok{)} \OperatorTok{\{}
+\NormalTok{                dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{=} \BuiltInTok{Math}\OperatorTok{.}\FunctionTok{max}\OperatorTok{(}\NormalTok{activityEnjoy1}\OperatorTok{,}\NormalTok{ activityEnjoy2}\OperatorTok{);}
+            \OperatorTok{\}}
+            \ControlFlowTok{else} \OperatorTok{\{}
+                \CommentTok{// There is no prev choice == 1st day.}
+                \CommentTok{// I can choose any activity I want.}
+\NormalTok{                dp}\OperatorTok{[}\NormalTok{i}\OperatorTok{][}\NormalTok{j}\OperatorTok{]} \OperatorTok{=} \BuiltInTok{Math}\OperatorTok{.}\FunctionTok{max}\OperatorTok{(}\NormalTok{activityEnjoy1}\OperatorTok{,}\NormalTok{ activityEnjoy2}\OperatorTok{,}\NormalTok{ activityEnjoy3}\OperatorTok{);}
+            \OperatorTok{\}}
+        \OperatorTok{\}}       
+    \OperatorTok{\}}
+    \ControlFlowTok{return} \BuiltInTok{Math}\OperatorTok{.}\FunctionTok{max}\OperatorTok{(}\NormalTok{dp}\OperatorTok{[}\NormalTok{n}\OperatorTok{][}\DecValTok{1}\OperatorTok{],}\NormalTok{ dp}\OperatorTok{[}\NormalTok{n}\OperatorTok{][}\DecValTok{2}\OperatorTok{],}\NormalTok{ dp}\OperatorTok{[}\NormalTok{n}\OperatorTok{][}\DecValTok{3}\OperatorTok{]);}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Hence the function can calculate the maximal total enjoyment during the
+trip, the actual pattern of choosing each trip can be obtained by
+observing and recording the position of maximal dp value in last day,
+then move one day backward, until the first day has been reached. The
+overall time complexity for this algorithm is O(n\^{}2) since two loops
+have been used to produce dp table.
+
+\end{document}
